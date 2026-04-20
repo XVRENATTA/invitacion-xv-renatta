@@ -10,7 +10,7 @@ setTimeout(()=>{inicio.style.display="none";},800);
 audio.play().catch(()=>{});
 };
 
-// musica
+// musica toggle
 const toggle=document.getElementById("toggleMusica");
 let play=true;
 toggle.onclick=()=>{
@@ -38,7 +38,7 @@ document.getElementById("contador").innerHTML=
 "⏳ "+d+" días • "+h+" hrs • "+m+" min";
 },1000);
 
-// pases
+// pases dinámicos
 const params=new URLSearchParams(window.location.search);
 const pases=params.get("pases")||"1";
 document.getElementById("pases").textContent="🎟️ Acceso para "+pases+" persona(s)";
