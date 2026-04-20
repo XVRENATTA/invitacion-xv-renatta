@@ -1,4 +1,3 @@
-// params
 const params = new URLSearchParams(window.location.search);
 const nombre = params.get("nombre") || "Invitado";
 const pases = params.get("pases") || "1";
@@ -7,9 +6,9 @@ document.getElementById("nombre").textContent = nombre;
 document.getElementById("pases").textContent =
 "🎟️ Acceso para " + pases + " persona(s)";
 
-// ubicacion
+// ubicación
 document.getElementById("ubicacion").href =
-"https://www.google.com/maps/place/Palapa+El+Fresno/@25.4867681,-100.9474088";
+"https://www.google.com/maps/place/Palapa+El+Fresno";
 
 // whatsapp
 document.getElementById("whatsapp").href =
@@ -17,11 +16,10 @@ document.getElementById("whatsapp").href =
 encodeURIComponent(
   "Hola 😊 confirmo asistencia a los XV de Renatta.\n" +
   "Nombre: " + nombre + "\n" +
-  "Asistiremos " + pases + " persona(s).\n\n" +
-  "¡Nos vemos! 🌺"
+  "Asistiremos " + pases + " persona(s)."
 );
 
-// pantalla inicial + musica auto
+// pantalla inicio + música
 const pantalla = document.getElementById("pantallaInicio");
 const boton = document.getElementById("abrirInvitacion");
 const audio = document.getElementById("musica");
@@ -31,16 +29,20 @@ boton.addEventListener("click", () => {
   audio.play();
 });
 
-// flores
-const flores = document.querySelector(".flores");
+// 🎶 CONTROL MÚSICA
+const toggleBtn = document.getElementById("toggleMusica");
+let reproduciendo = true;
 
-for (let i = 0; i < 30; i++) {
-  const flor = document.createElement("span");
-  flor.textContent = "🌺";
-  flor.style.left = Math.random() * 100 + "vw";
-  flor.style.animationDuration = (5 + Math.random() * 5) + "s";
-  flores.appendChild(flor);
-}
+toggleBtn.addEventListener("click", () => {
+  if (reproduciendo) {
+    audio.pause();
+    toggleBtn.textContent = "🔇 Activar música";
+  } else {
+    audio.play();
+    toggleBtn.textContent = "🎵 Pausar música";
+  }
+  reproduciendo = !reproduciendo;
+});
 
 // contador
 const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
