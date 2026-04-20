@@ -13,10 +13,7 @@ document.getElementById("ubicacion").href =
 
 document.getElementById("whatsapp").href =
 "https://wa.me/528443884334?text=" +
-encodeURIComponent(
-  "Hola 😊 confirmo asistencia a los XV’s de Renatta.\n" +
-  "Asistiremos " + pases + " persona(s)."
-);
+encodeURIComponent("Confirmo asistencia. Somos " + pases + " personas.");
 
 const pantalla = document.getElementById("pantallaInicio");
 const boton = document.getElementById("abrirInvitacion");
