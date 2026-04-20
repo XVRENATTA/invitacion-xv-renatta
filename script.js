@@ -1,4 +1,4 @@
-// parametros
+// params
 const params = new URLSearchParams(window.location.search);
 const nombre = params.get("nombre") || "Invitado";
 const pases = params.get("pases") || "1";
@@ -18,57 +18,41 @@ encodeURIComponent(
   "Hola 😊 confirmo asistencia a los XV de Renatta.\n" +
   "Nombre: " + nombre + "\n" +
   "Asistiremos " + pases + " persona(s).\n\n" +
-  "¡Nos vemos en la fiesta! 🌺"
+  "¡Nos vemos! 🌺"
 );
 
-// 💌 pantalla inicio + musica
+// pantalla inicial + musica auto
 const pantalla = document.getElementById("pantallaInicio");
-const botonAbrir = document.getElementById("abrirInvitacion");
+const boton = document.getElementById("abrirInvitacion");
 const audio = document.getElementById("musica");
 
-botonAbrir.addEventListener("click", () => {
+boton.addEventListener("click", () => {
   pantalla.style.display = "none";
   audio.play();
 });
 
-// boton musica
-const btn = document.getElementById("btnMusica");
-let reproduciendo = false;
-
-btn.addEventListener("click", () => {
-  if (!reproduciendo) {
-    audio.play();
-    btn.textContent = "🌊 Sonando...";
-    reproduciendo = true;
-  } else {
-    audio.pause();
-    btn.textContent = "🎵 Activar ambiente";
-    reproduciendo = false;
-  }
-});
-
 // flores
-const floresContainer = document.querySelector(".flores");
+const flores = document.querySelector(".flores");
 
 for (let i = 0; i < 30; i++) {
   const flor = document.createElement("span");
   flor.textContent = "🌺";
   flor.style.left = Math.random() * 100 + "vw";
   flor.style.animationDuration = (5 + Math.random() * 5) + "s";
-  floresContainer.appendChild(flor);
+  flores.appendChild(flor);
 }
 
-// contador elegante
+// contador
 const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
 
 setInterval(() => {
   const ahora = new Date().getTime();
-  const diferencia = fechaEvento - ahora;
+  const diff = fechaEvento - ahora;
 
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
 
   document.getElementById("contador").innerHTML =
-    `⏳ <b>${dias}</b> días • <b>${horas}</b> hrs • <b>${minutos}</b> min`;
+    `⏳ <b>${d}</b> días • <b>${h}</b> hrs • <b>${m}</b> min`;
 }, 1000);

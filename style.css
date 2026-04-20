@@ -1,16 +1,14 @@
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100dvh;
   font-family: Arial, sans-serif;
   background: url('fondo.png') no-repeat center center/cover;
+  min-height: 100dvh;
 }
 
-/* 💌 pantalla inicio */
+/* 💌 inicio */
 #pantallaInicio {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: url('fondo.png') no-repeat center center/cover;
@@ -37,42 +35,38 @@ html, body {
   cursor: pointer;
 }
 
-/* overlay */
+/* overlay scroll */
 .overlay {
-  min-height: 100dvh;
   background: rgba(0,0,0,0.45);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px 10px;
+  min-height: 100dvh;
+  padding: 30px 10px;
 }
 
-/* tarjeta */
+/* tarjetas */
 .card {
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
-  padding: 35px 20px;
   border-radius: 25px;
-  text-align: center;
-
+  padding: 25px;
+  margin: 20px auto;
   width: 95%;
   max-width: 420px;
+  text-align: center;
+}
 
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+/* secciones */
+.seccion {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 .titulo {
   font-size: 2.6em;
   color: #ff2d75;
-}
-
-.sub { color: #555; }
-
-h2 {
-  color: #ff2d75;
-  font-size: 2em;
 }
 
 .info {
@@ -81,19 +75,26 @@ h2 {
   margin: 15px 0;
 }
 
-.dress { font-weight: bold; }
+.sobre {
+  font-style: italic;
+}
 
-.botones a, .botones button {
+.btn {
   display: block;
-  margin: 10px auto;
+  margin: 15px auto;
   padding: 12px;
-  border-radius: 50px;
+  border-radius: 30px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   color: white;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* imágenes */
+.imagen {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
 }
 
 /* flores */
@@ -104,8 +105,8 @@ h2 {
 }
 
 @keyframes flotar {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-10vh); }
+  0% { transform: translateY(100vh);}
+  100% { transform: translateY(-10vh);}
 }
 
 /* olas */
@@ -122,20 +123,4 @@ h2 {
 @keyframes moverOlas {
   0% { background-position-x: 0; }
   100% { background-position-x: 1000px; }
-}
-
-/* responsive */
-@media (max-width: 600px) {
-  .overlay {
-    align-items: flex-start;
-    padding-top: 40px;
-  }
-
-  .card {
-    margin-bottom: 60px;
-  }
-
-  .info {
-    flex-direction: column;
-  }
 }
