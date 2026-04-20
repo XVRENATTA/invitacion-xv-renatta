@@ -1,4 +1,3 @@
-// PARAMETROS
 const params = new URLSearchParams(window.location.search);
 
 const nombre = params.get("nombre") || "Invitado";
@@ -7,16 +6,16 @@ const pases = params.get("pases") || "1";
 document.getElementById("nombre").textContent = nombre;
 document.getElementById("pases").textContent = "Tienes " + pases + " pase(s)";
 
-// 📍 UBICACION
+// ubicación
 document.getElementById("ubicacion").href =
 "https://www.google.com/maps/place/Palapa+El+Fresno/@25.4867681,-100.9474088";
 
-// 📲 WHATSAPP
+// whatsapp
 document.getElementById("whatsapp").href =
 "https://wa.me/528443884334?text=" +
 encodeURIComponent("Hola, confirmo asistencia a los XV de Renatta. Somos " + pases + " personas.");
 
-// 🎶 MUSICA
+// música
 const audio = document.getElementById("musica");
 const btn = document.getElementById("btnMusica");
 
@@ -24,9 +23,13 @@ let reproduciendo = false;
 
 btn.addEventListener("click", () => {
   if (!reproduciendo) {
-    audio.play();
-    btn.textContent = "🌊 Sonando...";
-    reproduciendo = true;
+    audio.volume = 0.5;
+    audio.play().then(() => {
+      btn.textContent = "🌊 Sonando...";
+      reproduciendo = true;
+    }).catch(() => {
+      alert("Toca otra vez para activar la música 🎵");
+    });
   } else {
     audio.pause();
     btn.textContent = "🎵 Activar ambiente";
@@ -34,7 +37,7 @@ btn.addEventListener("click", () => {
   }
 });
 
-// 🌸 FLORES
+// flores
 const floresContainer = document.querySelector(".flores");
 
 for (let i = 0; i < 35; i++) {
@@ -45,7 +48,7 @@ for (let i = 0; i < 35; i++) {
   floresContainer.appendChild(flor);
 }
 
-// ⏳ CONTADOR
+// contador
 const fechaEvento = new Date("June 20, 2026 17:00:00").getTime();
 
 setInterval(() => {

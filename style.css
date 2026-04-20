@@ -2,21 +2,24 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: url('fondo.jpg') no-repeat center center/cover;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
+/* overlay */
 .overlay {
   background: rgba(0,0,0,0.5);
-  height: 100%;
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 20px 10px;
 }
 
-/* 🌺 TARJETA PRINCIPAL */
+/* tarjeta */
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
   padding: 35px 20px;
   border-radius: 25px;
@@ -30,11 +33,13 @@ body {
 }
 
 .titulo {
-  font-size: 2.8em;
+  font-size: 2.6em;
   color: #ff2d75;
 }
 
-.sub { color: #555; }
+.sub {
+  color: #555;
+}
 
 h2 {
   color: #ff2d75;
@@ -51,7 +56,8 @@ h2 {
   font-weight: bold;
 }
 
-.botones a, .botones button {
+.botones a,
+.botones button {
   display: block;
   margin: 10px auto;
   padding: 12px;
@@ -65,11 +71,12 @@ h2 {
   transition: 0.3s;
 }
 
-.botones a:hover, .botones button:hover {
+.botones a:hover,
+.botones button:hover {
   transform: scale(1.05);
 }
 
-/* 🌸 FLORES */
+/* flores */
 .flores span {
   position: absolute;
   font-size: 24px;
@@ -81,15 +88,16 @@ h2 {
   100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* 🌊 OLAS */
+/* olas */
 .olas {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background: url('https://i.imgur.com/ZAts69L.png');
   background-size: cover;
   animation: moverOlas 6s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes moverOlas {
@@ -97,26 +105,41 @@ h2 {
   100% { background-position-x: 1000px; }
 }
 
-/* ✨ ANIMACIÓN */
+/* animación */
 @keyframes entrada {
   0% { opacity: 0; transform: scale(0.8) translateY(50px); }
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* 📱 RESPONSIVE (LA MAGIA) */
+/* 📱 RESPONSIVE REAL */
 @media (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('fondo.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .overlay {
+    align-items: flex-start;
+    padding-top: 40px;
+    background: rgba(0,0,0,0.4);
+  }
+
   .card {
     width: 95%;
     max-width: none;
     padding: 40px 25px;
+    margin-bottom: 40px;
   }
 
   .titulo {
-    font-size: 2.5em;
+    font-size: 2.3em;
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: 1.7em;
   }
 
   .info {
@@ -124,8 +147,8 @@ h2 {
     gap: 5px;
   }
 
-  .botones a, .botones button {
+  .botones a,
+  .botones button {
     width: 100%;
-    font-size: 1em;
   }
 }
