@@ -29,19 +29,31 @@ boton.addEventListener("click", () => {
   audio.play();
 });
 
-// 🎶 CONTROL MÚSICA
+const audio = document.getElementById("musica");
 const toggleBtn = document.getElementById("toggleMusica");
-let reproduciendo = true;
 
+// cuando abres invitación
+boton.addEventListener("click", () => {
+  pantalla.style.display = "none";
+
+  audio.play().then(() => {
+    toggleBtn.textContent = "🎵 Pausar música";
+  }).catch(() => {
+    toggleBtn.textContent = "🎵 Activar música";
+  });
+});
+
+// 🎶 BOTÓN REAL (usa estado del audio, no variable)
 toggleBtn.addEventListener("click", () => {
-  if (reproduciendo) {
-    audio.pause();
-    toggleBtn.textContent = "🔇 Activar música";
-  } else {
+
+  if (audio.paused) {
     audio.play();
     toggleBtn.textContent = "🎵 Pausar música";
+  } else {
+    audio.pause();
+    toggleBtn.textContent = "🔇 Activar música";
   }
-  reproduciendo = !reproduciendo;
+
 });
 
 // contador
