@@ -2,26 +2,26 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>XV’s Renatta 🌺</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css?v=5">
+<title>XV’s Renatta 🌺</title>
+<link rel="stylesheet" href="style.css?v=fix">
 </head>
 
 <body>
 
-<div id="pantallaInicio">
+<!-- PANTALLA INICIO -->
+<div id="inicio">
   <div class="inicio-card">
     <h1>🌺 XV’s Renatta 🌺</h1>
     <p>Estás invitado a una experiencia especial</p>
-    <button id="abrirInvitacion">💌 Abrir invitación</button>
+    <button id="btnAbrir">💌 Abrir invitación</button>
   </div>
 </div>
 
-<div class="flores"></div>
-
+<!-- CONTENIDO -->
 <div class="overlay">
 
-<section class="card hidden">
+<section class="card">
 <h1 class="titulo">🌺 Aloha 🌺</h1>
 <p>💌 Invitación personal e intransferible</p>
 <h2>Renatta</h2>
@@ -31,30 +31,31 @@
 <span class="hora">⏰ 5:00pm - 10:00pm</span>
 </div>
 
-<p id="contador" class="contador"></p>
-<h3 id="pases" class="pases"></h3>
+<p id="contador"></p>
+<h3 id="pases"></h3>
 
 <button id="toggleMusica" class="btn">🎵 Pausar música</button>
 </section>
 
-<section class="card hidden">
+<section class="card">
 <h2>🌸 Dress Code</h2>
-<img src="dresscode.png" class="imagen">
+<p>Tropical / Floral 🌴</p>
+<img src="dresscode.png" class="img">
 </section>
 
-<section class="card hidden">
+<section class="card">
 <h2>💌 Sobre</h2>
-<img src="sobre.png" class="imagen">
+<img src="sobre.png" class="img">
 </section>
 
-<section class="card hidden">
+<section class="card">
 <h2>📍 Ubicación</h2>
-<a id="ubicacion" class="btn">Ver ubicación</a>
+<a href="https://www.google.com/maps/place/Palapa+El+Fresno" class="btn">Ver ubicación</a>
 </section>
 
-<section class="card hidden">
+<section class="card">
 <h2>📲 Confirmar</h2>
-<a id="whatsapp" class="btn">Confirmar</a>
+<a href="https://wa.me/528443884334" class="btn">Confirmar asistencia</a>
 </section>
 
 </div>
@@ -63,6 +64,6 @@
 <source src="musica.mp3">
 </audio>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=fix"></script>
 </body>
 </html>
