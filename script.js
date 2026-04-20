@@ -8,8 +8,8 @@ document.getElementById("nombre").textContent = nombre;
 document.getElementById("pases").textContent = "Tienes " + pases + " pase(s)";
 
 // 📍 UBICACION (CAMBIA ESTE LINK)
-document.getElementById("ubicacion").href =
-"https://www.google.com/maps/place/Palapa+El+Fresno/@25.4867681,-100.9474088,79m/data=!3m1!1e3!4m6!3m5!1s0x868813947d67d8d5:0xa690f3114b1850d4!8m2!3d25.4865685!4d-100.9473367!16s%2Fg%2F11mpckfgy8?entry=ttu";
+  document.getElementById("ubicacion").href =
+  "https://www.google.com/maps/place/Palapa+El+Fresno/@25.4867681,-100.9474088,79m/data=!3m1!1e3!4m6!3m5!1s0x868813947d67d8d5:0xa690f3114b1850d4!8m2!3d25.4865685!4d-100.9473367!16s%2Fg%2F11mpckfgy8?entry=ttu";
 
 // 📲 WHATSAPP (CAMBIA EL NUMERO)
 document.getElementById("whatsapp").href =
