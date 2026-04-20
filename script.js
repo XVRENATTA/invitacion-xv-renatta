@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 const params = new URLSearchParams(window.location.search);
-const nombre = "Renatta";
 const pases = params.get("pases") || "1";
 
-document.getElementById("nombre").textContent = nombre;
 document.getElementById("pases").textContent =
 "🎟️ Acceso para " + pases + " persona(s)";
 
