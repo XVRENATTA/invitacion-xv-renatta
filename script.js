@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const nombre = params.get("nombre") || "RENATTA";
   const pases = params.get("pases") || "1";
-
-  const nombre = params.get("nombre")
   document.getElementById("pases").textContent =
   "🎟️ Acceso para " + pases + " persona(s)";
 
