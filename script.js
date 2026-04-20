@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 const inicio=document.getElementById("inicio");
 const btn=document.getElementById("btnAbrir");
+const overlay=document.querySelector(".overlay");
 const audio=document.getElementById("musica");
 
-// abrir invitación
 btn.onclick=()=>{
 inicio.style.display="none";
+overlay.style.display="flex";
 audio.play().catch(()=>{});
 };
 
-// música toggle
 const toggle=document.getElementById("toggleMusica");
 let play=true;
 
@@ -25,7 +25,6 @@ toggle.textContent="🎵 Pausar música";
 play=!play;
 };
 
-// contador
 const fechaEvento=new Date("June 20, 2026 17:00:00").getTime();
 
 setInterval(()=>{
@@ -40,7 +39,6 @@ document.getElementById("contador").innerHTML =
 "⏳ " + d + " días • " + h + " hrs • " + m + " min";
 },1000);
 
-// pases por URL
 const params=new URLSearchParams(window.location.search);
 const pases=params.get("pases") || "1";
 
