@@ -27,9 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("musica");
 
   boton.addEventListener("click", () => {
-    pantalla.style.display = "none";
-    document.querySelector(".overlay").style.display = "flex"; // 🔥 muestra invitación
-    audio.play().catch(() => {});
+
+    pantalla.style.opacity = "0";
+    pantalla.style.transition = "0.6s";
+
+    setTimeout(() => {
+      pantalla.style.display = "none";
+      document.querySelector(".overlay").style.display = "flex"; // 🔥 AQUÍ
+    }, 600);
+
+  audio.play().catch(() => {});
   });
 
   // 🎶 control música
