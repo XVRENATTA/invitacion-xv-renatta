@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div id="pantallaInicio">
@@ -19,56 +18,51 @@
 
 <div class="overlay">
 
-  <section class="card">
-    <h1 class="titulo">🌺 Aloha 🌺</h1>
+<section class="card">
+<h1 class="titulo">🌺 Aloha 🌺</h1>
 
-    <p class="sobre">💌 Invitación personal e intransferible</p>
+<p class="sobre">💌 Invitación personal e intransferible</p>
 
-    <p>Acompáñanos a celebrar el cumpleaños de</p>
-    <h2 id="nombre">Renatta</h2>
+<p>Acompáñanos a celebrar el cumpleaños de</p>
+<h2 id="nombre">Renatta</h2>
 
-    <p>Prepárate para una experiencia inolvidable 🌴</p>
+<div class="info">
+  <span class="fecha">📅 20 Junio</span>
+  <span class="hora">⏰ 5:00pm - 10:00pm</span>
+</div>
 
-    <div class="info">
-      <span class="fecha">📅 20 Junio</span>
-      <span class="hora">⏰ 5:00pm - 10:00pm</span>
-    </div>
+<p id="contador" class="contador"></p>
+<h3 id="pases" class="pases"></h3>
 
-    <p id="contador" class="contador"></p>
-    <h3 id="pases" class="pases"></h3>
+<button id="toggleMusica" class="btn">🎵 Pausar música</button>
+</section>
 
-    <button id="toggleMusica" class="btn">🎵 Pausar música</button>
-  </section>
+<section class="card">
+<h2>🌸 Dress Code</h2>
+<img src="dresscode.png" class="imagen">
+</section>
 
-  <section class="card">
-    <h2>🌸 Dress Code</h2>
-    <p>Tropical / Floral 🌴</p>
-    <img src="dresscode.png?v=2" class="imagen">
-  </section>
+<section class="card">
+<h2>💌 Sobre</h2>
+<img src="sobre.png" class="imagen">
+</section>
 
-  <section class="card">
-    <h2>💌 Sobre</h2>
-    <p>Tu presencia es lo más importante 💖</p>
-    <img src="sobre.png" class="imagen">
-  </section>
+<section class="card">
+<h2>📍 Ubicación</h2>
+<a id="ubicacion" class="btn">Ver ubicación</a>
+</section>
 
-  <section class="card">
-    <h2>📍 Ubicación</h2>
-    <a id="ubicacion" target="_blank" class="btn">Ver ubicación</a>
-  </section>
-
-  <section class="card">
-    <h2>📲 Confirmar</h2>
-    <a id="whatsapp" target="_blank" class="btn">Confirmar por WhatsApp</a>
-  </section>
+<section class="card">
+<h2>📲 Confirmar</h2>
+<a id="whatsapp" class="btn">Confirmar</a>
+</section>
 
 </div>
 
 <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script src="script.js"></script>
-
 </body>
 </html>
