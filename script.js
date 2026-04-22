@@ -49,11 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const boton = document.getElementById("abrirInvitacion");
   const audio = document.getElementById("musica");
 
-  boton.addEventListener("click", () => {
+boton.addEventListener("click", () => {
 
-    lanzarFlores(); // 🌺🔥 AQUÍ
+  const card = document.querySelector(".inicio-card");
 
-    pantalla.classList.add("abrir");
+  // 🔥 1. desaparece el cuadro
+  card.style.opacity = "0";
+  card.style.transform = "scale(0.9)";
+  card.style.transition = "0.3s ease";
+
+  setTimeout(() => {
+
+    lanzarFlores(); // 🌺 partículas
+
+    pantalla.classList.add("abrir"); // 💥 rompe
 
     audio.play().catch(() => {});
 
@@ -62,8 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".overlay").style.display = "flex";
     }, 1000);
 
-  });
+  }, 300); // ⏱️ espera a que desaparezca el cuadro
 
+});
   // 🎶 control música
   const toggleBtn = document.getElementById("toggleMusica");
   let reproduciendo = true;
