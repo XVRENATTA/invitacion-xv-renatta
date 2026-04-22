@@ -4,22 +4,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const nombre = params.get("nombre") || "RENATTA";
   const pases = params.get("pases") || "1";
+
   document.getElementById("pases").textContent =
-  "🎟️ Acceso para " + pases + " persona(s)";
+    "🎟️ Acceso para " + pases + " persona(s)";
 
-  // ubicación
+  // 📍 ubicación
   document.getElementById("ubicacion").href =
-  "https://maps.app.goo.gl/o7g5fjQbHxmXxnxK7";
+    "https://maps.app.goo.gl/o7g5fjQbHxmXxnxK7";
 
-  // whatsapp
+  // 📲 whatsapp
   document.getElementById("whatsapp").href =
-  "https://wa.me/528443884334?text=" +
-  encodeURIComponent(
-    "Hola 😊\n" +
-    "Hemos reservado " + pases + " lugares para ti en los XV de Renatta 🌺\n" +
-    "Confírmanos cuántos nos acompañarán:\n" +
-    "Nombre: "
-  );
+    "https://wa.me/528443884334?text=" +
+    encodeURIComponent(
+      "Hola 😊\n" +
+      "Hemos reservado " + pases + " lugares para ti en los XV de Renatta 🌺\n" +
+      "Confírmanos cuántos nos acompañarán:\n" +
+      "Nombre: "
+    );
+
+  // 🌺 PARTÍCULAS DE FLORES
+  function lanzarFlores() {
+    const contenedor = document.querySelector(".flores");
+
+    const emojis = ["🌺","🌸","🌼"];
+
+    for (let i = 0; i < 25; i++) {
+      const flor = document.createElement("span");
+
+      flor.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      flor.style.left = Math.random() * 100 + "vw";
+      flor.style.fontSize = (Math.random() * 15 + 15) + "px";
+      flor.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+      contenedor.appendChild(flor);
+
+      setTimeout(() => {
+        flor.remove();
+      }, 3000);
+    }
+  }
 
   // 💌 pantalla inicio + música
   const pantalla = document.getElementById("pantallaInicio");
@@ -28,15 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   boton.addEventListener("click", () => {
 
-    pantalla.style.opacity = "0";
-    pantalla.style.transition = "0.6s";
+    lanzarFlores(); // 🌺🔥 AQUÍ
+
+    pantalla.classList.add("abrir");
+
+    audio.play().catch(() => {});
 
     setTimeout(() => {
       pantalla.style.display = "none";
-      document.querySelector(".overlay").style.display = "flex"; // 🔥 AQUÍ
-    }, 600);
+      document.querySelector(".overlay").style.display = "flex";
+    }, 1000);
 
-  audio.play().catch(() => {});
   });
 
   // 🎶 control música
